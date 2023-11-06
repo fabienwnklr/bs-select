@@ -1,107 +1,119 @@
-# ts-vitejs-template
+<h1 align="center">bs-select</h1>
 
-Template using vitejs and typescript (and more) for create easily and quickly nice JS library !
+<p align="center">
+	<strong>The JavaScript plugin that brings select elements into the 21st century with intuitive multiselection, searching, and much more.</strong>
+</p>
 
-## Table of contents
+<p align="center">
+	<a href="https://github.com/snapappointments/bootstrap-select/releases/latest" target="_blank">
+		<img src="https://img.shields.io/github/release/snapappointments/bootstrap-select.svg" alt="Latest release">
+	</a>
+	<a href="https://www.npmjs.com/package/bootstrap-select" target="_blank">
+		<img src="https://img.shields.io/npm/v/bootstrap-select.svg" alt="npm">
+	</a>
+	<a href="https://www.nuget.org/packages/bootstrap-select" target="_blank">
+		<img src="https://img.shields.io/nuget/v/bootstrap-select.svg" alt="NuGet">
+	</a>
+	<a href="https://cdnjs.com/libraries/bootstrap-select" target="_blank">
+		<img src="https://img.shields.io/cdnjs/v/bootstrap-select.svg" alt="CDNJS">
+	</a>
+	<a href="https://www.jsdelivr.com/package/npm/bootstrap-select" target="_blank">
+		<img src="https://data.jsdelivr.com/v1/package/npm/bootstrap-select/badge?style=rounded" alt="jsDelivr">
+	</a>
+	<br>
+	<a href="https://github.com/snapappointments/bootstrap-select/blob/master/LICENSE" target="_blank">
+		<img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="License">
+	</a>
+</p>
 
-- [Features](#features)
-- [Checklist](#checklist)
-- [Usage](#usage)
-- [Build](#build)
-- [Docs](#docs)
-- [Release](#release)
+<p align="center">
+	<a href="https://developer.snapappointments.com/bootstrap-select"><img src="https://user-images.githubusercontent.com/2874325/38997831-97e12bbe-43ab-11e8-85f5-b8c05d91c7b1.gif" width="289" height="396" alt="bootstrap-select demo"></a>
+</p>
 
-## Features
+> **Note**
+> <strong>Inspired by <a href="https://github.com/snapappointments/bootstrap-select/" target="_blank">bootstrap-select</a></strong>
 
-- 🦾 TypeScript, of course
-- 🎨 Lint your commit with [commitlint](https://github.com/conventional-changelog/commitlint) using [conventional commits](https://www.conventionalcommits.org/)
-- 🎨 Lint your code with [typescript-eslint](https://typescript-eslint.io/getting-started/)
-- 🎨 Format your code with [prettier](https://prettier.io/)
-- 💄 Perform scss using [sass](https://sass-lang.com/)
-- ⚓ Manage your commit hook width [husky](https://typicode.github.io/husky/)
-- ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest)
-- 🧪 E2E Testing with [Playwright](https://github.com/microsoft/playwright)
-- 📝 Generate change log based on commit using [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version)
-- 📄 Generate static site using [docusaurus](https://docusaurus.io/)
-- 🗒 Generate **markdown** doc from ts using [typedoc](https://typedoc.org/) and [typedoc-plugin-markdown](https://github.com/tgreyuk/typedoc-plugin-markdown)
-- 🏷️ Generate declaration files with [vite-plugin-dts](https://github.com/qmhc/vite-plugin-dts)
-- Trigger custom event with tiny plugin [MicroEvent](https://github.com/fabienwnklr/ts-vitejs-template/blob/master/src/lib/MicroPlugin.ts)
-- Create plugin(s) with tiny plugin [MicroPlugin](https://github.com/fabienwnklr/ts-vitejs-template/blob/master/src/lib/MicroPlugin.ts)
+## Demo
 
-## Checklist
+You can view a live demo and some examples of how to use the various options [here](https://developer.snapappointments.com/bootstrap-select/examples/).
 
-When you use this template, try follow the checklist to update your info properly
+## Quick start
 
-- [ ] Change the class name file
-- [ ] Change the class name file in `src` then the class name in `index.html` / `vite.config.ts` / `src/MyClass.ts` AND in script `build:docs` into `package.json`
-- [ ] Change url for repo in `.versionrc.json`
-- [ ] Add your style to `src/scss/style.scss` (optionnal)
-- [ ] Add the favicon in `public` (optional)
-- [ ] Clean up the README (optional)
-- [ ] Update you website name and more in `docs` folder or remove it and update `docs:api` script
+Bootstrap-select requires jQuery v1.9.1+, Bootstrap’s dropdown.js component, and Bootstrap's CSS. If you're not already using Bootstrap in your project, a precompiled version of the Bootstrap v3.4.1 minimum requirements can be downloaded [here](https://getbootstrap.com/docs/3.4/customize/?id=7830063837006f6fc84f). If using bootstrap-select with Bootstrap v4+, you'll also need Popper.js. For all of Bootstrap v4's requirements, see [Getting started](https://getbootstrap.com/docs/4.1/getting-started/introduction/). A precompiled version of the requirements will be made available in an upcoming release of bootstrap-select.
+
+Several quick start options are available:
+
+- [Download the latest release.](https://github.com/snapappointments/bootstrap-select/archive/v1.14.0-beta3.zip)
+- Clone the repo: `git clone https://github.com/snapappointments/bootstrap-select.git`
+- Install with [npm](https://www.npmjs.com/package/bootstrap-select): `npm install bootstrap-select`
+- Install with [yarn](https://yarnpkg.com/package/bootstrap-select): `yarn add bootstrap-select`
+- Install with [Composer](https://packagist.org/packages/snapappointments/bootstrap-select): `composer require snapappointments/bootstrap-select`
+- Install with [NuGet](https://www.nuget.org/packages/bootstrap-select): `Install-Package bootstrap-select`
+- Install with [Bower](https://bower.io): `bower install bootstrap-select`
+- Install via CDN ([cdnjs](https://cdnjs.com/libraries/bootstrap-select), [jsDelivr](https://www.jsdelivr.com/package/npm/bootstrap-select) or [PageCDN](https://pagecdn.com/lib/bootstrap-select)):
+
+```html
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/js/i18n/defaults-*.min.js"></script>
+```
+> The CDN is updated after the release is made public, which means that there is a delay between the publishing of a release and its availability on the CDN.
 
 ## Usage
 
-Just run and visit [http://localhost:5173/](http://localhost:5173/)
+> Bootstrap 4 only works with bootstrap-select v1.13.0+. By default, bootstrap-select automatically detects the version of Bootstrap being used. However, there are some instances where the version detection won't work. See the [documentation](https://developer.snapappointments.com/bootstrap-select/options/#bootstrap-version) for more information.
 
-```bash
-yarn dev
+### Via `selectpicker` class
+Add the `selectpicker` class to your select elements to auto-initialize bootstrap-select.
+```html
+<select class="selectpicker">
+  <option>Mustard</option>
+  <option>Ketchup</option>
+  <option>Barbecue</option>
+</select>
 ```
 
-## Build
-
-To build the lib, run
-
-```bash
-yarn build
+### Via JavaScript
+```js
+// To style only selects with the my-select class
+$('.my-select').selectpicker();
+```
+or
+```js
+// To style all selects
+$('select').selectpicker();
 ```
 
-And you will see the generated file in dist that ready to be served.
+If calling bootstrap-select via JavaScript, you will need to wrap your code in a [`.ready()`](https://api.jquery.com/ready/) block or place it at the bottom of the page (after the last instance of bootstrap-select).
 
-## Docs
-
-### Docusaurus website
-
-Run dev mode website
-
-```bash
-yarn docs
+```js
+$(function () {
+	$('select').selectpicker();
+});
 ```
 
-> **for more you can see `docs/package.json` scripts**
 
-### Api doc
+Check out the [documentation](https://developer.snapappointments.com/bootstrap-select) for further information.
 
-Generate api doc from typedoc
+## Bugs and feature requests
 
-```bash
-yarn build:api
-```
+Anyone and everyone is welcome to contribute. **Please take a moment to
+review the [guidelines for contributing](CONTRIBUTING.md)**. Make sure you're using the latest version of bootstrap-select before submitting an issue.
 
-## Release
+* [Bug reports](CONTRIBUTING.md#bug-reports)
+* [Feature requests](CONTRIBUTING.md#feature-requests)
 
-### First release
+## Documentation
 
-```bash
-yarn release -- --first-release
-```
+Bootstrap-select's documentation, included in this repo in the root directory, is built with MkDocs and hosted at https://developer.snapappointments.com/bootstrap-select. The documentation may also be [run locally](CONTRIBUTING.md#running-documentation-locally).
 
-### New release
+## Copyright and license
 
-**See all availables options [here](https://github.com/absolute-version/commit-and-tag-version#first-release)**
+Copyright (C) 2012-2018 [SnapAppointments, LLC](https://snapappointments.com)
 
-```bash
-yarn release
-```
-
-you can precise version using `major`, `minor` or `patch`
-
-```bash
-yarn release -- --release-as minor
-```
-
-or you can pass specific version
-
-```bash
-yarn release -- --release-as 1.1.0
-```
+Licensed under [the MIT license](LICENSE).
